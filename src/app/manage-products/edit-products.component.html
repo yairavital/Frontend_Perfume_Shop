@@ -1,0 +1,88 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+
+<div class="container">
+  <button class="btn_addUser m-2" routerLink="/addPerfume">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+    >
+      <path fill="none" d="M0 0h24v24H0z"></path>
+      <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
+    </svg>
+    <span>Add</span>
+  </button>
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th style="width: 8%"><h5>Id</h5></th>
+        <th style="width: 50%"><h5>Product</h5></th>
+        <th style="width: 15%"><h5>Gender</h5></th>
+        <th style="width: 15%"><h5>Price</h5></th>
+        <th style="width: 15%"><h5>OnSale</h5></th>
+        <th style="width: 10%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let productItem of productsList">
+        <td>
+          <h6 class="nomargin" id="title">{{ productItem.id }}</h6>
+        </td>
+        <td data-th="Product">
+          <div class="row">
+            <div class="col-sm-2 hidden-xs">
+              <img
+                src="{{ productItem.imgSrc }}"
+                style="width: 80px; height: 80px"
+                alt="..."
+                class="img-responsive"
+              />
+            </div>
+            <div class="col-sm-10">
+              <h4 class="col-md-12" id="title">
+                {{ productItem.title | uppercase }}
+              </h4>
+            </div>
+          </div>
+        </td>
+        <td>
+          <h6 class="nomargin" id="title">{{ productItem.gender }}</h6>
+        </td>
+        <td>
+          <h6 data-th="Price" id="title">
+            {{ productItem.price | currency }}
+          </h6>
+        </td>
+        <td id="title">
+          <h6>
+            {{ productItem.onSale }}
+          </h6>
+        </td>
+
+        <td>
+          <button
+            type="button"
+            class="btn btn-outline-info btn-circle btn-lg btn-circle"
+            (click)="deletePerfume(productItem)"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+        <td>
+          <button
+            routerLink="/editPerfume"
+            (click)="updatePerfume(productItem)"
+            type="button"
+            class="btn btn-outline-info btn-circle btn-lg btn-circle"
+          >
+            <i class="fa fa-edit"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

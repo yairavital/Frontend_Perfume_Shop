@@ -1,0 +1,74 @@
+<div id="orderconfirmation">
+  <div id="balloon">
+    <div class="balloon"></div>
+    <div class="basket"></div>
+  </div>
+
+  <div class="rentalinfo">
+    <h1>Your rental has been approved!</h1>
+    <p>We've sent you a mail with all the details.</p>
+  </div>
+  <section class="rentsection">
+    <h3>transaction details</h3>
+    <ul class="rentalgrid">
+      <li>
+        <h5>Date</h5>
+        <p>{{ myDate }}</p>
+      </li>
+      <li>
+        <h5>Total</h5>
+        <p>{{ total | currency }}</p>
+      </li>
+      <li>
+        <h5>Payment method</h5>
+        <p>Credit Card</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="rentsection">
+    <h3>product details</h3>
+    <table id="cart" class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th style="width: 50%">Product</th>
+          <th style="width: 10%">Price</th>
+          <th style="width: 8%">Quantity</th>
+          <th style="width: 22%" class="text-center">Subtotal</th>
+          <th style="width: 10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let productItem of productsList">
+          <td data-th="Product">
+            <div class="row">
+              <div class="col-sm-2 hidden-xs">
+                <img
+                  src="{{ productItem.imgSrc }}"
+                  style="width: 100px; height: 100px"
+                  alt="..."
+                  class="img-responsive"
+                />
+              </div>
+              <div class="col-sm-10">
+                <h4 class="nomargin" id="title">{{ productItem.title }}</h4>
+              </div>
+            </div>
+          </td>
+          <td>
+            {{ productItem.price | currency }}
+          </td>
+          <td>
+            {{ productItem.quantity }}
+          </td>
+          <td>
+            {{ productItem.quantity * productItem.price | currency }}
+          </td>
+        </tr>
+        <tr class="total text-center">
+          <strong>Total {{ total | currency }}</strong>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

@@ -1,0 +1,20 @@
+.cart {
+  text-align: end;
+  margin-inline: 0.5rem;
+
+  &__button {
+    background: rgb(57, 62, 63);
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__quantity {
+    font-size: 1.3rem;
+    margin: 0.3rem;
+  }
+}

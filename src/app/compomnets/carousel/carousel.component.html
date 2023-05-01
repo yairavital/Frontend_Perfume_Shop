@@ -1,0 +1,12 @@
+<ngb-carousel id="carusel" class="carouselChild">
+  <ng-template *ngFor="let image of images; let i = index" ngbSlide>
+    <h1>Best sales</h1>
+    <div class="picsum-img-wrapper cart">
+      <img [src]="images[i].imageSrc" />
+    </div>
+
+    <div class="carousel-caption">
+      <h4>{{ images[i].perfumeName }}</h4>
+    </div>
+  </ng-template>
+</ngb-carousel>

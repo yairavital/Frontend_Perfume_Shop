@@ -1,0 +1,16 @@
+<div class="contaier-card">
+  <h1 id="h1Card">Hair Cair</h1>
+
+  <div class="card" style="width: 18rem" *ngFor="let product of products">
+    <img src="{{ product.imgSrc }}" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <p class="card-text">price: {{ product.price | currency }}</p>
+
+      <app-modal-add-to-chart
+        [product]="product"
+        [perfumes]="products"
+      ></app-modal-add-to-chart>
+    </div>
+  </div>
+</div>

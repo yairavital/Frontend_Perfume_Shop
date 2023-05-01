@@ -1,0 +1,95 @@
+<div class="container my-5">
+  <!--Section: Content-->
+  <section class="text-center dark-text mb-5">
+    <h3 *ngIf="isSend">
+      Thank you for your inquiry, we will respond as soon as possible
+      <span id="ok">✔</span>
+    </h3>
+    <div class="card" *ngIf="!isSend">
+      <div class="card-body rounded-top border-top p-4">
+        <!-- Section heading -->
+        <h3 class="font-weight-bold my-4">Contact Us</h3>
+        <!-- Section description -->
+        <p class="font-weight-light mx-auto mb-4 pb-2">
+          We want to hear from you. Please feel your details bellow. We will try
+          to answer as soon as possible.
+        </p>
+
+        <form class="mb-4 mx-md-5" action="" [formGroup]="form">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <!-- Name -->
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Name"
+                formControlName="name"
+              />
+              <span class="error" *ngIf="name?.invalid && name?.touched"
+                >name is requried !</span
+              >
+            </div>
+            <div class="col-md-6 mb-4">
+              <!-- Email -->
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Email"
+                formControlName="email"
+              />
+              <span class="error" *ngIf="email?.invalid && email?.touched"
+                >email is requried !</span
+              >
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <!-- Subject -->
+              <input
+                type="text"
+                id="subject"
+                class="form-control"
+                placeholder="Subject"
+                formControlName="subject"
+              />
+              <span class="error" *ngIf="subject?.invalid && subject?.touched"
+                >subject is requried !</span
+              >
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group mb-4">
+                <textarea
+                  class="form-control rounded"
+                  id="message"
+                  rows="3"
+                  placeholder="How can we help?"
+                  formControlName="message"
+                ></textarea>
+                <span class="error" *ngIf="message?.invalid && message?.touched"
+                  >message is requried !</span
+                >
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button
+                (click)="Submit()"
+                type="submit"
+                class="btn btn-dark btn-md"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!--Section: Content-->
+</div>

@@ -1,0 +1,15 @@
+<div class="contaier-card">
+  <h1 id="h1Card">Men's Perfumes</h1>
+
+  <div class="card" style="width: 18rem" *ngFor="let perfume of products">
+    <img src="{{ perfume.imgSrc }}" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">{{ perfume.title }}</h5>
+      <p class="card-text">price: {{ perfume.price | currency }}</p>
+      <app-modal-add-to-chart
+        [product]="perfume"
+        [perfumes]="products"
+      ></app-modal-add-to-chart>
+    </div>
+  </div>
+</div>

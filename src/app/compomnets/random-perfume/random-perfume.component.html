@@ -1,0 +1,42 @@
+<div class="RandomForm">
+  <h1>Best Match!</h1>
+  <div class="Container">
+    <form (ngSubmit)="randomPerfume(range.value)">
+      <select
+        #gender
+        name="gender"
+        id="gender"
+        (change)="onSelected(gender.value)"
+      >
+        <option value="gender" disabled selected>gender</option>
+        <option value="female">female</option>
+        <option value="man">man</option>
+      </select>
+      <div class="priceRangeInput">
+        <p>Max price:</p>
+        <input
+          type="range"
+          min="0"
+          max="300"
+          value="50"
+          class="slider"
+          id="myRange"
+          #range
+        />
+        <label>{{ range.value }}</label>
+      </div>
+      <button type="submit" class="button">Find</button>
+    </form>
+    <div class="perfumeContainer" *ngIf="showCard | async">
+      <div class="card">
+        <img src="{{ randomPerfumeItem.imgSrc }}" />
+        <h2 class="title">{{ randomPerfumeItem.title }}</h2>
+        <span class="price">{{ randomPerfumeItem.price | currency }}</span>
+        <app-modal-add-to-chart
+          [product]="randomPerfumeItem"
+          [perfumes]="products"
+        ></app-modal-add-to-chart>
+      </div>
+    </div>
+  </div>
+</div>

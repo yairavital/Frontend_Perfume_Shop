@@ -1,0 +1,51 @@
+#card {
+  margin: auto;
+}
+body {
+  margin: auto;
+}
+.carouselChild {
+  display: none;
+}
+#h1Carousel {
+  display: none;
+}
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-block: 1em;
+  text-align: center;
+}
+@media (max-width: 767.98px) {
+  .mainContainer {
+    margin: auto;
+    width: 98vw;
+  }
+
+  .container {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .mainContainer {
+    margin: auto;
+    width: 98vw;
+  }
+
+  .container {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  #h1Carousel,
+  .carouselChild {
+    display: initial;
+  }
+}

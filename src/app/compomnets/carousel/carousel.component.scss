@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Montserrat:ital,wght@1,200;1,300&family=Raleway:wght@100&family=Roboto:wght@300&family=Source+Sans+Pro:wght@200&display=swap");
+#carusel {
+  margin-left: 2em;
+  width: 25vw;
+  min-height: 50vh;
+  background-color: rgba(198, 191, 191, 0.297);
+}
+img {
+  width: auto;
+  height: 40vh;
+}
+.carousel-caption {
+  margin-bottom: 14.5em;
+  color: black;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+.cart {
+  margin-bottom: 0.2em;
+}

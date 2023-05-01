@@ -1,0 +1,92 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div class="container">
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th style="width: 50%">Product</th>
+        <th style="width: 10%">Price</th>
+        <th style="width: 8%">Quantity</th>
+        <th style="width: 22%" class="text-center">Subtotal</th>
+        <th style="width: 10%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let productItem of productsList">
+        <td data-th="Product">
+          <div class="row" *ngIf="productItem.id != 0">
+            <div class="col-sm-2 hidden-xs">
+              <img
+                src="{{ productItem.imgSrc }}"
+                style="width: 100px; height: 100px"
+                alt="..."
+                class="img-responsive"
+              />
+            </div>
+            <div class="col-sm-10">
+              <h4 class="nomargin" id="title">{{ productItem.title }}</h4>
+            </div>
+          </div>
+        </td>
+        <td *ngIf="productItem.id != 0" data-th="Price">
+          {{ productItem.price | currency }}
+        </td>
+        <td data-th="Quantity">
+          <input
+            (change)="quantityChange(productItem.quantity, productItem)"
+            *ngIf="productItem.id != 0"
+            type="number"
+            class="form-control text-center"
+            value="{{ productItem.quantity }}"
+            min="0"
+            [(ngModel)]="productItem.quantity"
+          />
+        </td>
+        <td *ngIf="productItem.id != 0" data-th="Subtotal" class="text-center">
+          {{ productItem.quantity * productItem.price | currency }}
+        </td>
+        <td class="actions" data-th="">
+          <button
+            *ngIf="productItem.id != 0"
+            class="btn btn-danger btn-sm"
+            (click)="deleteItem(productItem)"
+          >
+            <i class="fa fa-trash-o"></i>
+          </button>
+        </td>
+      </tr>
+      <button
+        class="Btn"
+        *ngIf="productsList.length != 1"
+        (click)="emptyCart()"
+      >
+        Empty Cart
+      </button>
+    </tbody>
+    <tfoot>
+      <tr class="visible-xs">
+        <td class="text-center">
+          <strong>Total {{ finalTotal | currency }}</strong>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a routerLink="/home" class="btn btn-warning"
+            ><i class="fa fa-angle-left"></i> Continue Shopping</a
+          >
+        </td>
+        <td colspan="2" class="hidden-xs"></td>
+        <td class="hidden-xs text-center">
+          <strong>Total {{ finalTotal | currency }}</strong>
+        </td>
+        <td>
+          <a (click)="makePayment(total)" class="btn btn-success btn-block"
+            >Checkout <i class="fa fa-angle-right"></i
+          ></a>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
