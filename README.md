@@ -29,7 +29,7 @@ A front end client side for perfume shop. The main technologies that used in thi
 
 ## Demo
 
-https://avitalyairshop.netlify.app/
+[Perfume Shop Demo](https://avitalyairshop.netlify.app)
 
 ## Feedback
 
