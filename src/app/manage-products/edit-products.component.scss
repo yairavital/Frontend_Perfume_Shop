@@ -1,6 +1,6 @@
 .btn_addUser {
   position: relative;
-  left: 85%;
+  left: 60%;
   display: flex;
   align-items: center;
   font-family: inherit;
@@ -19,6 +19,43 @@
   letter-spacing: 0.05em;
   border-radius: 20em;
 }
+/*Mobile View*/
+@media only screen and (max-width: 1200px) {
+  td,
+  tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #2e2c2b;
+  }
+  tr + tr {
+    margin-top: 1.5em;
+  }
+  td {
+    /* make like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    background-color: #f8d9d5;
+    text-align: left;
+  }
+  td:before {
+    content: attr(data-label);
+    display: inline-block;
+    line-height: 1.5;
+    margin-left: -100%;
+    width: 100%;
+    white-space: nowrap;
+  }
+}
+
 .btn_addUser svg {
   margin-right: 6px;
 }

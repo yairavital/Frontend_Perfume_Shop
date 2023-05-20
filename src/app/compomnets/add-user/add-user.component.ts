@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { usersService } from '../users.service';
-import { Iuser } from '../IuserData';
-import { usersType } from '../usersType';
+import { usersService } from '../../users.service';
+import { Iuser } from '../../IuserData';
+import { usersType } from '../../usersType';
 
 @Component({
   selector: 'app-add-user',

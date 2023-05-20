@@ -40,10 +40,10 @@ import { usersService } from './users.service';
 import { OrderConfirmGuardService } from './order-confirm-guard.service';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
-import { AddUserComponent } from './add-user/add-user.component';
+import { AddUserComponent } from './compomnets/add-user/add-user.component';
 import { AdminGuardService } from './editUsers-guard.service';
 import { EditProductsComponent } from './manage-products/edit-products.component';
-import { AddPerfumeComponent } from './add-perfume/add-perfume.component';
+import { AddPerfumeComponent } from './compomnets/add-perfume/add-perfume.component';
 import { EditPerfumeComponent } from './edit-perfume/edit-perfume.component';
 
 @NgModule({
