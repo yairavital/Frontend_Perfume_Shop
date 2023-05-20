@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
   isDisplay: boolean = false;
+  isOpen: boolean = false;
   count: number = 1;
   cartService: any;
   isLogin: boolean = this.usersServ.checkLoginFromLocal();
@@ -25,5 +26,8 @@ export class TopNavComponent implements OnInit {
   dropDownListOnClick() {
     this.count % 2 == 1 ? (this.isDisplay = true) : (this.isDisplay = false);
     this.count++;
+  }
+  changeIsOpen() {
+    this.isOpen = !this.isOpen;
   }
 }

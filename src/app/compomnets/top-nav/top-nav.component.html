@@ -21,11 +21,12 @@
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          (click)="changeIsOpen()"
         >
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="this.isOpen">
             <li class="nav-item">
               <a
                 class="nav-link active link-light point"
@@ -87,13 +88,14 @@
             Manage Users
           </button>
 
-          <span class="d-flex">
+          <span class="d-flex" *ngIf="this.isOpen">
             <Img
               id="cartIcon"
               src="\assets\Images\cart.png"
               routerLink="/cart"
             />
             <span
+              *ngIf="this.isOpen"
               class="position-absolute top-20 start-80 translate-middle badge rounded-pill bg-danger"
               >{{ this.cartServic.countItem }}</span
             >
