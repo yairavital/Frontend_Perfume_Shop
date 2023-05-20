@@ -21,12 +21,11 @@
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
-          (click)="changeIsOpen()"
         >
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="this.isOpen">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
                 class="nav-link active link-light point"
@@ -88,14 +87,13 @@
             Manage Users
           </button>
 
-          <span class="d-flex" *ngIf="this.isOpen">
+          <span class="d-flex">
             <Img
               id="cartIcon"
               src="\assets\Images\cart.png"
               routerLink="/cart"
             />
             <span
-              *ngIf="this.isOpen"
               class="position-absolute top-20 start-80 translate-middle badge rounded-pill bg-danger"
               >{{ this.cartServic.countItem }}</span
             >
@@ -122,10 +120,10 @@
         </div>
       </div>
     </nav>
+
     <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
   </body>
