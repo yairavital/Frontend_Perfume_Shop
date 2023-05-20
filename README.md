@@ -1,4 +1,4 @@
-# Perfume Shop
+# Perfume Shop  💎
 
 A front end client side for perfume shop. The main technologies that used in this project are: Angular, Html,Css, TypeScript,JavaScript,Bootstrap.
 
@@ -29,7 +29,7 @@ A front end client side for perfume shop. The main technologies that used in thi
 
 ## Demo
 
-Insert gif or link to demo
+[Perfume Shop Demo](https://avitalyairshop.netlify.app)
 
 ## Feedback
 
